@@ -1,0 +1,46 @@
+hello.content:
+  path: '/hello'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\HelloController::content'
+    _title: 'Hello World'
+  requirements:
+    _permission: 'access content'
+hello2:   
+  path: '/hello2'
+  defaults:
+    _controller: '\Drupal\hello_world\Controller\Hello2Controller::content'
+    _title: 'Hello World 2'
+  requirements:
+    _permission: 'access content'
+    
+entity.announcement.add_form:
+    path: '/admin/config/system/site-announcements/add'
+    defaults:
+        _entity_form: 'announcement.add'
+        _title: 'Add announcement'
+    requirements:
+        _permission: 'administer content entity'
+        
+entity.announcement.collection:
+    path: '/admin/config/system/site-announcements'
+    defaults:
+        _entity_list: 'announcement'
+        _title: 'Site Announcements'
+    requirements:
+        _permission: 'administer content entity'
+        
+entity.message.add_form:
+    path: '/messages/add'
+    defaults:
+        _entity_form: 'message.add'
+        _title: 'Add message'
+    requirements:
+        _entity_create_access: 'message'
+        
+entity.message.collection:
+    path: '/admin/content/messages'
+    defaults:
+        _entity_list: 'message'
+        _title: 'Messages'
+    requirements:
+        _permission: 'administer messages entity'        
